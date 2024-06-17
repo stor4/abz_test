@@ -9,6 +9,9 @@
     text-align: center;
     padding: 20px;
     min-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     // overflow: hidden;
 
     img {

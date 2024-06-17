@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import RadioButton from './RadioButton';
-import Input from './Input';
-import UploadImg from './UploadImg';
-import Button from './Button';
-import FormSuccess from './FormSucces';
-import Preloader from './Preloader';
+import React, { useEffect, useState } from 'react'
+import RadioButton from './RadioButton'
+import Input from './Input'
+import UploadImg from './UploadImg'
+import Button from './Button'
+import FormSuccess from './FormSucces'
+import Preloader from './Preloader'
 
 function PostSection({ reload, setReload }) {
-  const [file, setFile] = useState(null);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [position, setPosition] = useState('');
-  const [option, setOption] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [isFormValid, setIsFormValid] = useState(false);
-  const [token, setToken] = useState('');
-  const [success, setSuccess] = useState(false);
+  const [file, setFile] = useState(null)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [position, setPosition] = useState('')
+  const [option, setOption] = useState(null)
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [isFormValid, setIsFormValid] = useState(false)
+  const [token, setToken] = useState('')
+  const [success, setSuccess] = useState(false)
   const [formErrors, setFormErrors] = useState({
     name: false,
     email: false,
@@ -34,19 +34,11 @@ function PostSection({ reload, setReload }) {
     position: ''
   });
 
-  const inputChange = (e) => {
-    const { name, value } = e.target;
+  const positionChange = (value) => {
+    setPosition(value);
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
-    }));
-  };
-
-  const positionChange = (e) => {
-    setPosition(e.target.value);
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      position: e.target.value,
+      position: value,
     }));
   };
 
@@ -100,7 +92,9 @@ function PostSection({ reload, setReload }) {
       if (res.success) {
         setSuccess(true);
         setReload(!reload);
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        setTimeout(() => {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+        }, 1000)
       }
     }).catch((e) => {
       setError(e.message);
@@ -191,7 +185,7 @@ function PostSection({ reload, setReload }) {
                   name={item.name}
                   value={item.id}
                   checked={position === item.id}
-                  onChange={(e) => setPosition(e.target.value)}
+                  onChange={() => positionChange(item.id)}
                 />
               ))}
             </div>
