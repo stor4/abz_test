@@ -26,41 +26,6 @@
     }
 }
 
-
-
-// @media (min-width: 1024px) {
-//     .get {
-//         padding: 0 45px;
-//         &_grid {
-//             grid-template-columns: repeat(3, 1fr);
-//             gap: 5px;
-//         }
-//     }
-// }
-
-// @media (min-width: 768px) {
-//     .get {
-//         padding: 0 20px;
-//         &__grid {
-//             grid-template-columns: repeat(2, 1fr);
-//             gap: 16px;
-
-//             .userCard {
-//                 max-width: none;
-//                 flex: 1 50%
-//             }
-//         }
-//     }
-// }
-
-// @media (max-width: 768px) {
-//     .get {
-//         &__grid {
-//             grid-template-columns: 1fr;
-//         }
-//     }
-// }
-
 @media (max-width: 1920px) {
     .get {
         padding: 0 45px;
@@ -70,7 +35,7 @@
         }
     }
 }
-@media (max-width: 768px)  {
+@media (max-width: 960px)  {
     .get {
         padding: 0 20px;
         &__grid {
@@ -88,6 +53,7 @@
     .get {
         &__grid {
             grid-template-columns: 1fr;
+            gap: 20px;
         }
     }
 }
