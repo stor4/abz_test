@@ -1,0 +1,40 @@
+.custom-file-upload-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.upload-button {
+    background-color: transparent;
+    border: 1px solid var(--black-87);
+    color: var(--black-87);
+    padding: 15px 14px;
+    border-radius: 4px 0 0 4px;
+    cursor: pointer;
+
+    &:hover {
+        // background-color: #0089a7;
+    }
+}
+
+.file-input {
+    position: absolute;
+    left: -9999px;
+}
+
+.file-name {
+    padding: 16px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #7E7E7E;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    width: 100%;
+    overflow: hidden;
+
+    p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
